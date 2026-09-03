@@ -1,0 +1,10 @@
+[Example]
+./samfasC+mh.pl Example_Methyl-CpG_PERV_PK15_mapping.sam > Example_Methyl-CpG_PERV_PK15_mapping.step1.fas
+cat PERV-MSLmRNA.fas Example_Methyl-CpG_PERV_PK15_mapping.step1.fas > Example_Methyl-CpG_PERV_PK15_mapping.step2.fas
+mafft Example_Methyl-CpG_PERV_PK15_mapping.step2.fas > Example_Methyl-CpG_PERV_PK15_mapping.step2.aln.fas
+./count_Cmh_PERV-LTR.pl Example_Methyl-CpG_PERV_PK15_mapping.step2.aln.fas > Example_Methyl-CpG_PERV_PK15_mapping.step2.aln.csv
+
+cat REF.fas PK15_PERV_37.fa > PK15_PERV_37.2.fas
+mafft PK15_PERV_37.2.fas > PK15_PERV_37.aln.2.fas
+./perv-intact.pl PK15_PERV_37.aln.2.fas > PK15_PERV_37.aln.2.csv
+
